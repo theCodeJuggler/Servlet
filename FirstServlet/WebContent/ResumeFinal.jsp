@@ -8,27 +8,82 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	Resume resume = (Resume)request.getAttribute("ResumeRequest");
-%>
-
-<%=resume.getFname()%><br>
-<%=resume.getLname()%><br>
-<%=resume.getGender()%><br>
-<%for(String hobby:resume.getHobbies()){
+	<%
+		Resume resume = (Resume) request.getAttribute("ResumeRequest");
 	%>
-	<%=hobby %>&nbsp&nbsp<%
-} %>
-<%=resume.getDob()%><br>
-<%=resume.getQualification()%><br>
-<%=resume.getAddress()%><br>
-<%for(String skill:resume.getSkills()){
+	<div>
+		<div>
+			<h1><%=resume.getFname()%>
+				<%=resume.getLname()%></h1>
+		</div>
+		<div><%=resume.getAddress()%></div>
+		<div>
+			Contact:
+			<%=resume.getContact()%></div>
+		<div>
+			E-Mail:
+			<%=resume.getMail()%></div>
+	</div>
+	<br>
+	<br>
+	<center>
+		<b>Career Objectives</b>
+	</center>
+	<hr>
+	<%=resume.getSummary()%><br>
+	<br>
+	<br>
+	<br>
+	<center>
+		<b>Educational Qualifications</b>
+	</center>
+	<hr>
+	<%=resume.getQualification()%>
+	<br>
+	<br>
+	<br>
+	<center>
+		<b>Skills</b>
+	</center>
+	<hr>
+	<%
+		for (String skill : resume.getSkills()) {
 	%>
-	<%=skill %>&nbsp&nbsp<%
-} %>
-<%=resume.getMail()%><br>
-<%=resume.getSite()%><br>
-<%=resume.getSummary()%><br>
-<%=resume.getContact()%><br>
+	<%=skill%>&nbsp&nbsp<%
+		}
+	%>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+		<b>Personal Details</b>
+	</center>
+	<hr>
+	<table>
+		<tr>
+			<td>Date of Birth</td>
+			<td>:</td>
+			<td><%=resume.getDob()%></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>:</td>
+			<td><%=resume.getGender()%></td>
+		</tr>
+		<tr>
+			<td>Hobbies</td>
+			<td>:</td>
+			<td>
+				<%
+					for (String hobby : resume.getHobbies()) {
+				%> <%=hobby%>&nbsp&nbsp <%} %>
+			</td>
+		</tr>
+		<tr>
+			<td>Website URL</td><td>:</td>
+			<td><%=resume.getSite()%></td>
+		</tr>
+	</table>
 </body>
 </html>

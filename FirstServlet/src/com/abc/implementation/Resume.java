@@ -1,7 +1,5 @@
 package com.abc.implementation;
 
-import java.time.LocalDate;
-
 public class Resume {
 	
 	String fname;
@@ -81,7 +79,5 @@ public class Resume {
 	public String getSummary() {
 		return summary;
 	}
-	
-	
 	
 }

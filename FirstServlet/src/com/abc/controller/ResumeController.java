@@ -36,7 +36,7 @@ public class ResumeController extends HttpServlet {
 				request.getParameter("dob"), request.getParameterValues("hobbies"),
 				request.getParameter("address"), request.getParameterValues("skill"),
 				request.getParameter("email"), request.getParameter("website"),
-				request.getParameter("contact") ,request.getParameter("summary")
+				request.getParameter("contact") ,request.getParameter("summary"),
 				);
 
 		request.setAttribute("ResumeRequest", resume);
