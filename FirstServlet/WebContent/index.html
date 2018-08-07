@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h1 align = "center">Complete Your Resume</h1>
+	<form action="ResumeController" method="GET">
+		<table align="center">
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" name="fname" required /></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lname" required /></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="Male" required>
+				Male&nbsp&nbsp<input type="radio" name="gender"
+					value="Female"> Female</td>
+			</tr>
+			<tr>
+				<td>Highest Qualification</td>
+				<td>
+					<select name="qualification" required>
+						<option value="Class 10 and Below">Class 10 and Below</option>
+						<option value="Class 12 and Below">Class 12 and Below</option>
+						<option value="Graduatate">Graduatate</option>
+						<option value="Post-Graduatate">Post-Graduatate</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth</td>
+				<td><input type="date" name="dob" required /></td>
+			</tr>
+			<tr>
+				<td>Hobbies</td>
+				<td>
+					<select multiple name="hobbies" required>
+						<option value="Playing Outdoor Games">Playing Outdoor
+							Games</option>
+						<option value="Singing">Singing</option>
+						<option value="Dancing">Dancing</option>
+						<option value="Sleeping">Sleeping</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><textarea rows="24" cols="100" required name="address"></textarea></td>
+			</tr>
+			<tr>
+				<td>Photo</td>
+				<td><input type="file" name="photo" ></td>
+			</tr>
+			<tr>
+				<td>Skills</td>
+				<td>
+					<input type="checkbox" value="C" name="skill">C&nbsp&nbsp
+					<input type="checkbox" value="C++" name="skill">C++&nbsp&nbsp
+					<input type="checkbox" value="Java" name="skill">Java&nbsp&nbsp
+					<input type="checkbox" value="Python" name="skill">Python&nbsp&nbsp
+					<input type="checkbox" value="Ruby" name="skill">Ruby&nbsp&nbsp
+					<input type="checkbox" value="Scala" name="skill">Scala&nbsp&nbsp
+				</td>
+			</tr>
+			<tr>
+				<td>Email ID </td>
+				<td><input type="email" name="email" required /></td>
+			</tr>
+			<tr>
+				<td>Website</td>
+				<td><input type="url" name="website" /></td>
+			</tr>
+			<tr>
+				<td>Contact</td>
+				<td><input type="text" name="contact" pattern="[9-6][9-0]{9}" required /></td>
+			</tr>
+			<tr>
+				<td>Summary</td>
+				<td><textarea rows="24" cols="100" name="summary" required></textarea></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><input type="submit" name="submit" value="Submit"> <input type="reset" value="Clear"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
