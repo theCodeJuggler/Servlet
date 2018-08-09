@@ -35,7 +35,8 @@ public class BookController extends HttpServlet {
 		case "/addToCart.shop":
 			int id = Integer.parseInt(request.getParameter("id"));
 			service.addBookCart(id);
-			response.sendRedirect("viewCart.shop");
+			session.setAttribute("cart", service.viewCart());
+			response.sendRedirect("home.jsp");
 			break;
 		
 		case "/viewCart.shop":

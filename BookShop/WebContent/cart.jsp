@@ -9,6 +9,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<a href="viewAllBooks.shop">Home</a>
 	<table>
 		<tr>
 			<th>Book ID</th>

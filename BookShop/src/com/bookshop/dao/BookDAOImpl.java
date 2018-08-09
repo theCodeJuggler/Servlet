@@ -77,9 +77,14 @@ public class BookDAOImpl implements BookDAO {
 			if(cartV.getBook().getId()==id)
 			{
 				if(cartV.getQuantity()>1)
-					cartV.setQuantity(cartV.getQuantity()-1);
+				{	cartV.setQuantity(cartV.getQuantity()-1);
+					break;
+				}
 				else
+				{	
 					cart.remove(id);
+					break;
+				}
 			}
 		}
 	}
