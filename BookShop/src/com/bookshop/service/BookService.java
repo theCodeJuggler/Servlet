@@ -14,5 +14,7 @@ public interface BookService {
 	void addBookCart(int id);
 
 	Collection<Cart> viewCart();
+	
+	int getTotalQuantity();
 
 }

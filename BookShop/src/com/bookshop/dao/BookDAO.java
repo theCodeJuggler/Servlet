@@ -15,4 +15,5 @@ public interface BookDAO {
 
 	void delFrmCart(int Id);
 
+	int getTotalQuantity();
 }

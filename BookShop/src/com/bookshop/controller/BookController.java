@@ -30,18 +30,22 @@ public class BookController extends HttpServlet {
 		String action = request.getServletPath();
 		System.out.println(action);
 		
+		
+		
 		switch (action) {
 		
 		case "/addToCart.shop":
 			int id = Integer.parseInt(request.getParameter("id"));
 			service.addBookCart(id);
 			session.setAttribute("cart", service.viewCart());
+			session.setAttribute("totalCnt", service.getTotalQuantity());
 			response.sendRedirect("home.jsp");
 			break;
 		
 		case "/viewCart.shop":
 			session = request.getSession();
 			session.setAttribute("cart", service.viewCart());	System.out.println(service.viewCart());
+			session.setAttribute("totalCnt", service.getTotalQuantity());
 			response.sendRedirect("cart.jsp");
 			break;
 		

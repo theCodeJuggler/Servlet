@@ -10,28 +10,33 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<a href="viewAllBooks.shop">Home</a>
-	<table>
-		<tr>
-			<th>Book ID</th>
-			<th>Book Name</th>
-			<th>Price</th>
-			<th>Author</th>
-			<th>Description</th>
-			<th>Quantity</th>
-		</tr>
-		<tr>
-			<jstl:forEach var="cart" items="${sessionScope.cart}">
-				<tr>
-					<td>${cart.book.id}</td>
-					<td>${cart.book.name}</td>
-					<td>${cart.book.price}</td>
-					<td>${cart.book.author}</td>
-					<td>${cart.book.description}</td>
-					<td>${cart.quantity}</td>
-					<td><a href="delFrmCrt.shop?id=${cart.book.id}">Remove Item</a></td>
-				</tr>
-			</jstl:forEach>
-		</tr>
-	</table>
+	<jstl:if test="${sessionScope.totalCnt > 0}">
+		<table>
+			<tr>
+				<th>Book ID</th>
+				<th>Book Name</th>
+				<th>Price</th>
+				<th>Author</th>
+				<th>Description</th>
+				<th>Quantity</th>
+			</tr>
+			<tr>
+				<jstl:forEach var="cart" items="${sessionScope.cart}">
+					<tr>
+						<td>${cart.book.id}</td>
+						<td>${cart.book.name}</td>
+						<td>${cart.book.price}</td>
+						<td>${cart.book.author}</td>
+						<td>${cart.book.description}</td>
+						<td>${cart.quantity}</td>
+						<td><a href="delFrmCrt.shop?id=${cart.book.id}">Remove Item</a></td>
+					</tr>
+				</jstl:forEach>
+			</tr>
+		</table>
+	</jstl:if>
+	<jstl:if test="${sessionScope.totalCnt == 0}">
+		<div align="center">NOTHONG HAS BEEN ADDED TO CART</div>
+	</jstl:if>
 </body>
 </html>

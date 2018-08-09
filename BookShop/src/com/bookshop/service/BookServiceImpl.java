@@ -41,4 +41,8 @@ public class BookServiceImpl implements BookService {
 	public Collection<Cart> viewCart(){
 		return bkDao.viewcart();
 	}
+	
+	public int getTotalQuantity() {
+		return bkDao.getTotalQuantity();
+	}
 }

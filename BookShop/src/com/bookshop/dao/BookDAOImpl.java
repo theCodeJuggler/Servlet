@@ -40,7 +40,6 @@ public class BookDAOImpl implements BookDAO {
 	 */
 	@Override
 	public void addBookCart(int id) {
-		//System.out.println("sservice "+id);
 		if(cart.get(id)==null)
 		{
 			for(Book book : viewAllBooks())
@@ -77,7 +76,8 @@ public class BookDAOImpl implements BookDAO {
 			if(cartV.getBook().getId()==id)
 			{
 				if(cartV.getQuantity()>1)
-				{	cartV.setQuantity(cartV.getQuantity()-1);
+				{	
+					cartV.setQuantity(cartV.getQuantity()-1);
 					break;
 				}
 				else
@@ -88,5 +88,13 @@ public class BookDAOImpl implements BookDAO {
 			}
 		}
 	}
-
+	
+	public int getTotalQuantity() {
+		
+		int totalQuantity = 0;
+		for(Cart cartV : viewcart()) {
+			totalQuantity += cartV.getQuantity();
+		}
+		return totalQuantity;
+	}
 }
