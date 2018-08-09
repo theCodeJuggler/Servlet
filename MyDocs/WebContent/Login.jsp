@@ -8,7 +8,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form action="login.app" method="get">
+	<form action="login.app" method="post">
 		<div align="center">
 			<div>
 				<h4>LOGIN</h4>

@@ -14,10 +14,18 @@ public class LoginController extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doPost(request, response);
+
 		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//creating session variable
 		HttpSession session = request.getSession();
 		String action = request.getServletPath();
 		
+		//switch case to select the required action
 		switch (action) {
 		case "/login.app":
 			String uname = request.getParameter("uname");
@@ -43,13 +51,6 @@ public class LoginController extends HttpServlet {
 		default:
 			break;
 		}
-		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-		
 		
 		
 	}
