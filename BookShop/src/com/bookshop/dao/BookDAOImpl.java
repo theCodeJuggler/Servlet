@@ -71,8 +71,17 @@ public class BookDAOImpl implements BookDAO {
 	 * @see com.bookshop.dao.BookDAO#delFrmCart(int)
 	 */
 	@Override
-	public void delFrmCart(int Id) {
-		cart.remove(Id);
+	public void delFrmCart(int id) {
+		for(Cart cartV : viewcart())
+		{
+			if(cartV.getBook().getId()==id)
+			{
+				if(cartV.getQuantity()>1)
+					cartV.setQuantity(cartV.getQuantity()-1);
+				else
+					cart.remove(id);
+			}
+		}
 	}
 
 }

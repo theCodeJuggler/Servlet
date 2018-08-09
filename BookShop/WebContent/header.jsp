@@ -2,5 +2,5 @@
 	<h1>Online Book Shop</h1>
 </div>
 <div align="right">
-	<a href="cart.jsp">Cart(${requestScope.employees.size()})</a>
+	<a href="cart.jsp">Cart(${sessionScope.cart.size()})</a>
 </div>

@@ -27,7 +27,7 @@
 					<td>${cart.book.author}</td>
 					<td>${cart.book.description}</td>
 					<td>${cart.quantity}</td>
-					<td><a href="delFrmCrt.shop?id= ${cart.book.id}">Remove Item</a></td>
+					<td><a href="delFrmCrt.shop?id=${cart.book.id}">Remove Item</a></td>
 				</tr>
 			</jstl:forEach>
 		</tr>

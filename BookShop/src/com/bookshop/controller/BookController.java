@@ -39,16 +39,15 @@ public class BookController extends HttpServlet {
 			break;
 		
 		case "/viewCart.shop":
-//			request.setAttribute("cart", service.viewCart());
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("cart.jsp");
-//			dispatcher.forward(request, response);
 			session = request.getSession();
 			session.setAttribute("cart", service.viewCart());	System.out.println(service.viewCart());
 			response.sendRedirect("cart.jsp");
 			break;
 		
-		case "/deleteCart.shop":
-			
+		case "/delFrmCrt.shop":
+			id = Integer.parseInt(request.getParameter("id"));
+			service.delFrmCart(id);
+			response.sendRedirect("viewCart.shop");
 			break;
 			
 		case "/viewAllBooks.shop":
