@@ -30,6 +30,7 @@ public class BookDAOImpl implements BookDAO {
 	/* (non-Javadoc)
 	 * @see com.bookshop.dao.BookDAO#viewAllBooks()
 	 */
+	
 	@Override
 	public Collection<Book> viewAllBooks(){
 		return bookDB.values();
@@ -95,6 +96,20 @@ public class BookDAOImpl implements BookDAO {
 		for(Cart cartV : viewcart()) {
 			totalQuantity += cartV.getQuantity();
 		}
+		
+		//System.out.println(totalPrice);
 		return totalQuantity;
+	}
+	
+	public double getTotalPrice() {
+		
+		double totalPrice=0.0;
+		
+		for(Cart cartV : viewcart()) {
+			totalPrice+=(cartV.getQuantity())*(cartV.getBook().getPrice());
+		}
+		
+		//System.out.println(totalPrice);
+		return totalPrice;
 	}
 }

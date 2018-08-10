@@ -28,7 +28,7 @@ public class BookController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String action = request.getServletPath();
-		System.out.println(action);
+		//System.out.println(action);
 		
 		
 		
@@ -39,13 +39,15 @@ public class BookController extends HttpServlet {
 			service.addBookCart(id);
 			session.setAttribute("cart", service.viewCart());
 			session.setAttribute("totalCnt", service.getTotalQuantity());
+			session.setAttribute("totalPrc", service.getTotalPrice());
 			response.sendRedirect("home.jsp");
 			break;
 		
 		case "/viewCart.shop":
 			session = request.getSession();
-			session.setAttribute("cart", service.viewCart());	System.out.println(service.viewCart());
+			session.setAttribute("cart", service.viewCart());	//System.out.println(service.viewCart());
 			session.setAttribute("totalCnt", service.getTotalQuantity());
+			session.setAttribute("totalPrc", service.getTotalPrice());
 			response.sendRedirect("cart.jsp");
 			break;
 		
@@ -57,7 +59,7 @@ public class BookController extends HttpServlet {
 			
 		case "/viewAllBooks.shop":
 			session = request.getSession();
-			session.setAttribute("book", service.viewAllBooks());	System.out.println(service.viewAllBooks());
+			session.setAttribute("book", service.viewAllBooks());	//System.out.println(service.viewAllBooks());
 			response.sendRedirect("home.jsp");
 			break;
 

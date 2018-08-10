@@ -10,7 +10,11 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<a href="viewAllBooks.shop">Home</a>
-	<jstl:if test="${sessionScope.totalCnt > 0}">
+	<jstl:if test="${sessionScope.totalCnt == 0}">
+		<jstl:redirect url="emptyCart.jsp">
+	
+		</jstl:redirect>
+	</jstl:if>
 		<table>
 			<tr>
 				<th>Book ID</th>
@@ -34,9 +38,8 @@
 				</jstl:forEach>
 			</tr>
 		</table>
-	</jstl:if>
-	<jstl:if test="${sessionScope.totalCnt == 0}">
-		<div align="center">NOTHONG HAS BEEN ADDED TO CART</div>
-	</jstl:if>
+		<br>
+		<br>
+	Total Price : ${sessionScope.totalPrc}
 </body>
 </html>

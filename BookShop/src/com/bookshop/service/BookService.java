@@ -16,5 +16,6 @@ public interface BookService {
 	Collection<Cart> viewCart();
 	
 	int getTotalQuantity();
-
+	
+	double getTotalPrice();
 }

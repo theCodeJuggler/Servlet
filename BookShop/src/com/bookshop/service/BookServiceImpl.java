@@ -45,4 +45,8 @@ public class BookServiceImpl implements BookService {
 	public int getTotalQuantity() {
 		return bkDao.getTotalQuantity();
 	}
+	
+	public double getTotalPrice() {
+		return bkDao.getTotalPrice();
+	}
 }
