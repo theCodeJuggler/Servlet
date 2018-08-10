@@ -69,6 +69,16 @@
 					</select>
 				</td>
 			</tr>
+			
+			<tr>
+				<td>
+					<input type="radio" value="Salaried">Salaried
+					<input type="radio" value="Not Salaried">Not Salaried
+				</td>
+				<td>
+					<input type="text" name="minBal" >
+				</td>
+			</tr>
 		</table>
 	</div>
 </body>
