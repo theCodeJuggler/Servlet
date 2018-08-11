@@ -45,7 +45,9 @@ switch (action) {
 		case "/fundTrnsfr.bank":
 		
 			break;
-			
+		
+		case "/updtFrm.bank":
+			break;
 		default:
 			break;
 		}
