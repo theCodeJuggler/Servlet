@@ -31,9 +31,9 @@
 	}
 
 	function checksalariedType(SalaryTypeShow) {
-		if (SalaryTypeShow.value == "salaried")
+		if (SalaryTypeShow.value == "Salaried")
 			document.getElementById("nonsalary").style.display = "none";
-		else if (SalaryTypeShow.value == "ntSalaried")
+		else if (SalaryTypeShow.value == "NotSalaried")
 			document.getElemetById("nonsalary").style.display = "block";
 	}
 
@@ -49,6 +49,7 @@
 </head>
 <body>
 	<div align="center">
+	<form action="addAcc.bank">
 		<table>
 			<tr>
 				<td>Account Holder Name</td>
@@ -78,13 +79,13 @@
 			
 			<tr id="radioOp">
 				<td>
-					<input type="radio" value="Salaried" name="sal" id="sal" onclick="checksalariedType(this)">Salaried
+					<input type="radio" value="Salaried" name="sal" id="sal" checked onclick="checksalariedType(this)">Salaried
 					<input type="radio" value="NotSalaried" name="sal" id="sal" onclick="checksalariedType(this)">Not Salaried
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="number" name="salary" id="salary" min="0" placeholder="salary" class="option">
+					<input type="number" name="salary" id="salary" min="0" placeholder="salary">
 					<input type="number" name="nonsalary" id="nonsalary" min="5000" placeholder="nonsalary" class="option">
 					<input type="number" name="currentsalary" id="currentsalary" min="10000" placeholder="currentsalary" class="option">
 					<input type="number" name="odlimit" id="odlimit" placeholder="odlimit" class="option">
@@ -95,6 +96,7 @@
 				<td><input type="reset" value="Clear"></td>
 			</tr>
 		</table>
+		</form>
 	</div>
 </body>
 </html>
