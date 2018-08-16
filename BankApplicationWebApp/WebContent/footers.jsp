@@ -1,0 +1,1 @@
+<div align="center"><h6>&copy; 2018 Capgemini, India. All Rights Reserved.</h6></div>
